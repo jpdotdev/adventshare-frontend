@@ -1,14 +1,14 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
-import Stories from './pages/Stories';
+import StoriesPage from './pages/StoriesPage';
 
 function App() {
   return (
     <div>
       <Navigation />
         <Routes>
-          <Route path="/stories" element={<Stories />} />
+          <Route path="/stories" element={<StoriesPage />} />
         </Routes>
     </div> 
   );
