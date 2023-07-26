@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Navigation = () => {
+export default function Navigation() {
     return (
         <div>
             <nav> 
                 <ul>
-                    <li> Home </li>
+                    <li> <Link to="/"> Home </Link></li>
                     <li> Profile </li>
                     <li> Sign Up </li>
                     <li> <Link to="/stories"> All Stories </Link> </li>
@@ -15,5 +15,3 @@ const Navigation = () => {
         </div>
     )
 }
-
-export default Navigation
