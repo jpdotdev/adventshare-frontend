@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Navigation() {
+const Navigation = () => {
     return (
         <div>
             <nav> 
@@ -10,8 +10,11 @@ export default function Navigation() {
                     <li> Profile </li>
                     <li> Sign Up </li>
                     <li> <Link to="/stories"> All Stories </Link> </li>
+                    <li> <Link to="/stories/:id"> Story Detail </Link> </li>
                 </ul>
             </nav>
         </div>
     )
 }
+
+export default Navigation
