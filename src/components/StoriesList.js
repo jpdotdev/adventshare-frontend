@@ -23,14 +23,14 @@ const StoriesList = (props) => {
         <>
             {stories && stories.map((item) => {
                 return (
-                    <>
-                        <h1 key={item.id}>Name: {item.Story.character}</h1> 
-                        <h2 key={item.id}>Party: {item.Story.party}</h2>
-                        <p key={item.id}>{item.Story.story}</p>
-                        <p key={item.id}>Created by: {item.Story.user.display_name}</p>
-                        <p key={item.id}>ID: {item.Story.id}</p>
-                        <p key={item.id}>Likes: {item.likes}</p>
-                    </>
+                    <div key={item.id}>
+                        <h1>Name: {item.Story.character}</h1> 
+                        <h2>Party: {item.Story.party}</h2>
+                        <p>{item.Story.story}</p>
+                        <p>Created by: {item.Story.user.display_name}</p>
+                        <p>ID: {item.Story.id}</p>
+                        <p>Likes: {item.likes}</p>
+                    </div>
                 )   
             })}
         </>

@@ -6,27 +6,15 @@ export const StoriesContextProvider = props => {
 
     const [stories, setStories] = useState([])
 
+    const addStories = (story) => {
+        setStories([...stories, story])
+    }
+
     return (
-        <StoriesContext.Provider value={{ stories, setStories }}>
+        <StoriesContext.Provider value={{ stories, setStories, addStories }}>
             {props.children}
         </StoriesContext.Provider>
     )
 
 }
 
-
-//     useEffect(() => {
-//         const getStories = async () => {
-//             try {
-//                 const response = await fetch('http://127.0.0.1:8000/stories')
-//                 const entries = await response.json()
-//                 setStories(entries)
-//             } catch (err) {
-//                 console.log(err)
-//             }
-//         }
-
-//         (async () => await getStories())();
-//     }, [])
-
-//     console.log(stories)

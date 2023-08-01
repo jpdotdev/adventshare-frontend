@@ -5,6 +5,7 @@ import Home from './routes/Home';
 import StoryDetail from './routes/StoryDetail'
 import { StoriesContextProvider } from './context/StoriesContext';
 import StoriesList from './components/StoriesList';
+import AddStory from './components/AddStory'
 
 
 
@@ -17,6 +18,7 @@ const App = () => {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/stories" element={<StoriesList />} />
             <Route exact path="/stories/:id" element={<StoryDetail />} />
+            <Route exact path="/stories/create" element={<AddStory />} />
           </Routes>
       </div> 
     </StoriesContextProvider>
