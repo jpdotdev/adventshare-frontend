@@ -8,7 +8,7 @@ const StoriesList = (props) => {
     useEffect(() => {
         const fetchStories = async () => {
             try {
-                const response = await Adventshare.get('/')
+                const response = await Adventshare.get('/stories')
                 setStories(response.data)
                } catch(err) {
                     console.log(err)

@@ -12,6 +12,7 @@ const Navigation = () => {
                     <li> <Link to="/stories"> All Stories </Link> </li>
                     <li> <Link to="/stories/:id"> Story Detail </Link> </li>
                     <li> <Link to="/stories/create"> Create A Story </Link> </li>
+                    <li> <Link to="/login"> Login </Link> </li>
                 </ul>
             </nav>
         </div>

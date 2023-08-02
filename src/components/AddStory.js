@@ -11,7 +11,7 @@ const AddStory = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await Adventshare.post("/", {
+            const response = await Adventshare.post("/stories", {
                 character: character,
                 party: party,
                 story: story

@@ -6,10 +6,18 @@ import StoryDetail from './routes/StoryDetail'
 import { StoriesContextProvider } from './context/StoriesContext';
 import StoriesList from './components/StoriesList';
 import AddStory from './components/AddStory'
-
+import Login from './components/Login';
+import useToken from './hooks/useToken';
 
 
 const App = () => {
+
+  const { token, setToken } = useToken();  
+
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
+
   return (
     <StoriesContextProvider>
       <div>
