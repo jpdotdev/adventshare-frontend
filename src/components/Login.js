@@ -17,24 +17,25 @@ const Login = ({ setToken }) => {
   const [password, setPassword] = useState('');
 
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    try {
-        const response = await Adventshare.post("/login", {
-          username: email,
-          password: password
-        }, {
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          }
-        },);
-        setToken(response.data)
-        console.log(response.data)
-    } 
-    catch (err) {
-        console.log(err)
+    const handleSubmit = async (e) => {
+      e.preventDefault()
+      try {
+          const response = await Adventshare.post("/login", {
+            username: email,
+            password: password
+          }, {
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }
+          },);
+          // setToken(response.data)
+          console.log(response)
+          console.log(response.data)
+      } 
+      catch (err) {
+          console.log(err)
+      }
     }
-}
 
 
   return(
@@ -54,10 +55,23 @@ const Login = ({ setToken }) => {
   )
 }
 
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired
-}
+// Login.propTypes = {
+//   setToken: PropTypes.func.isRequired
+// }
 
 export default Login
 
 
+  // const reqBody = {
+  //   username: 'test@test.com',
+  //   password: 'test'
+  // };
+  
+  // fetch('http://127.0.0.1:8000/login', {
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }, 
+  //     method: 'post',
+  //     body: JSON.stringify(reqBody),
+  //   }).then(response => response.json())
+  //   .then(data => console.log(data))

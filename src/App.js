@@ -12,11 +12,11 @@ import useToken from './hooks/useToken';
 
 const App = () => {
 
-  const { token, setToken } = useToken();  
+  // const { token, setToken } = useToken();  
 
-  if(!token) {
-    return <Login setToken={setToken} />
-  }
+  // if(!token) {
+  //   return <Login setToken={setToken} />
+  // }
 
   return (
     <StoriesContextProvider>
@@ -27,6 +27,7 @@ const App = () => {
             <Route exact path="/stories" element={<StoriesList />} />
             <Route exact path="/stories/:id" element={<StoryDetail />} />
             <Route exact path="/stories/create" element={<AddStory />} />
+            <Route exact path="/login" element={<Login />} />
           </Routes>
       </div> 
     </StoriesContextProvider>
