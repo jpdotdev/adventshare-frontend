@@ -11,10 +11,12 @@ import Adventshare from '../APIs/Adventshare';
 //     .then(data => data.json())
 //  }
 
-const Login = ({ setToken }) => {
+const Login = () => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('');
+  const [jwt, setJwt] = useState('')
+  
 
 
     const handleSubmit = async (e) => {
@@ -30,13 +32,14 @@ const Login = ({ setToken }) => {
           },);
           // setToken(response.data)
           console.log(response)
-          console.log(response.data)
+          setJwt(response.data.access_token)
       } 
       catch (err) {
           console.log(err)
       }
     }
 
+    console.log(jwt)
 
   return(
     <form onSubmit={handleSubmit}>
@@ -55,11 +58,14 @@ const Login = ({ setToken }) => {
   )
 }
 
+export default Login
+
+
+// { setToken } Login parameter
+
 // Login.propTypes = {
 //   setToken: PropTypes.func.isRequired
 // }
-
-export default Login
 
 
   // const reqBody = {
