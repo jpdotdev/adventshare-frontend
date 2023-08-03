@@ -1,52 +1,53 @@
 import React, { useState } from 'react';
 import Adventshare from '../APIs/Adventshare';
-import useLocalState from '../hooks/useLocalStorage';
 
 
-const Login = () => {
+const SignUp = () => {
 
-
+  const [display, setDisplay] = useState('');
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('');
-  const [jwt, setJwt] = useLocalState('', 'jwt')
   
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+      e.preventDefault()
       try {
-          const response = await Adventshare.post("/login", {
-            username: email,
+          const response = await Adventshare.post("/users", {
+            email: email,
+            display_name: display,
             password: password
           }, {
             headers: {
-              'Content-Type': 'application/x-www-form-urlencoded'
+              'Content-Type': 'application/json'
             }
           },);
           console.log(response)
-          setJwt(response.data.access_token)
       } 
       catch (err) {
           console.log(err)
       }
     }
 
-    console.log(jwt)
 
   return(
     <form onSubmit={handleSubmit}>
+        <label>
+        <p>Display Name:</p>
+        <input value={display} type="text" onChange={e => setDisplay(e.target.value)} />
+      </label>
       <label>
-        <p>Email</p>
+        <p>Email:</p>
         <input value={email} type="email" onChange={e => setEmail(e.target.value)} />
       </label>
       <label>
-        <p>Password</p>
+        <p>Password:</p>
         <input value={password} type="password" onChange={e => setPassword(e.target.value)} />
       </label>
       <div>
-        <button type="submit">Login</button>
+        <button type="submit">Sign Up</button>
       </div>
     </form>
   )
 }
 
-export default Login
-
+export default SignUp

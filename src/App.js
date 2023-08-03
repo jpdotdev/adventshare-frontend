@@ -7,16 +7,11 @@ import { StoriesContextProvider } from './context/StoriesContext';
 import StoriesList from './components/StoriesList';
 import AddStory from './components/AddStory'
 import Login from './components/Login';
-import useToken from './hooks/useToken';
+import PrivateRoute from './components/PrivateRoute';
+import SignUp from './components/SignUp';
 
 
 const App = () => {
-
-  // const { token, setToken } = useToken();  
-
-  // if(!token) {
-  //   return <Login setToken={setToken} />
-  // }
 
   return (
     <StoriesContextProvider>
@@ -26,8 +21,9 @@ const App = () => {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/stories" element={<StoriesList />} />
             <Route exact path="/stories/:id" element={<StoryDetail />} />
-            <Route exact path="/stories/create" element={<AddStory />} />
+            <Route exact path="/stories/create" element={<PrivateRoute> <AddStory /> </PrivateRoute>} />
             <Route exact path="/login" element={<Login />} />
+            <Route exact path="/signup" element={<SignUp />} />
           </Routes>
       </div> 
     </StoriesContextProvider>
