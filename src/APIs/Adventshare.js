@@ -6,7 +6,7 @@ export default axios.create({
 
 
 // Dev DB
-// http://127.0.0.1:8000/stories
+// http://127.0.0.1:8000/
 
 // Prod DB 
-// https://adventshare.onrender.com/stories
+// https://adventshare.onrender.com/

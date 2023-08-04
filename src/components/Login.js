@@ -28,17 +28,17 @@ const Login = () => {
           console.log(err)
       }
     }
-
+    
     console.log(jwt)
 
   return(
     <form onSubmit={handleSubmit}>
       <label>
-        <p>Email</p>
+        <p>Email:</p>
         <input value={email} type="email" onChange={e => setEmail(e.target.value)} />
       </label>
       <label>
-        <p>Password</p>
+        <p>Password:</p>
         <input value={password} type="password" onChange={e => setPassword(e.target.value)} />
       </label>
       <div>
