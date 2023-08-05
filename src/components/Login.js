@@ -24,8 +24,8 @@ const Login = () => {
           },);
           
           setJwt(response.data.access_token)
-          console.log(response)
-          window.location.href = 'stories';
+          console.log(response.data)
+          window.location.href = 'stories/create';
       } 
       catch (err) {
           console.log(err)
