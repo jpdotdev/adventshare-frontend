@@ -3,8 +3,11 @@ import { useParams } from "react-router-dom"
 import { StoriesContext } from "../context/StoriesContext"
 import Adventshare from "../APIs/Adventshare"
 import useLocalState from "../hooks/useLocalStorage"
+import { useNavigate } from "react-router-dom"
 
 const StoryDetail = () => {
+
+    let navigate = useNavigate()
 
     const { id } = useParams()
     const {selectedStory, setSelectedStory} = useContext(StoriesContext)
@@ -26,7 +29,7 @@ const StoryDetail = () => {
         fetchStory()
     }, [])
 
-    const  handleDelete = async (id) => {
+    const handleDelete = async (id) => {
         try { 
             const response = await Adventshare.delete(`/stories/${id}`, {
             headers : {
@@ -34,11 +37,15 @@ const StoryDetail = () => {
               }
         });
         console.log(response)
-        window.location.href = '/stories';
+        navigate('/stories');
 
         } catch (err) {
             console.log(err)
         }
+    }
+
+    const handleUpdate = async (id) => {
+        navigate(`/stories/${id}/update`)
     }
 
     console.log(jwt)
@@ -52,6 +59,7 @@ const StoryDetail = () => {
             <p>Created by: {selectedStory && selectedStory.Story.user.display_name}</p>
             <p>Likes: {selectedStory && selectedStory.likes}</p>
             <button onClick={() => handleDelete(selectedStory.Story.id)}> Delete Story </button>
+            <button onClick={() => handleUpdate(selectedStory.Story.id)}> Update Story </button>
         </div>
     )
 }

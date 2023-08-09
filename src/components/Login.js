@@ -11,8 +11,9 @@ const Login = () => {
   const [jwt, setJwt] = useLocalState('', 'jwt')
   
 
+    
     const handleSubmit = async (e) => {
-     e.preventDefault()
+      e.preventDefault()
       try {
           const response = await Adventshare.post("/login", {
             username: email,
@@ -22,10 +23,10 @@ const Login = () => {
               'Content-Type': 'application/x-www-form-urlencoded'
             }
           },);
-          
+
           setJwt(response.data.access_token)
           console.log(response.data)
-          window.location.href = 'stories/create';
+          window.location.href = '/stories'
       } 
       catch (err) {
           console.log(err)

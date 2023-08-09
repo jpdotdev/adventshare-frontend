@@ -9,6 +9,7 @@ import AddStory from './components/AddStory'
 import Login from './components/Login';
 import PrivateRoute from './components/PrivateRoute';
 import SignUp from './components/SignUp';
+import Update from './routes/Update';
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
             <Route exact path="/stories/create" element={ <PrivateRoute> <AddStory /> </PrivateRoute>} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<SignUp />} />
+            <Route exact path="/stories/:id/update" element={<Update />} />
           </Routes>
       </div> 
     </StoriesContextProvider>

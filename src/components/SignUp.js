@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Adventshare from '../APIs/Adventshare';
+import { useNavigate } from 'react-router-dom';
 
 
 const SignUp = () => {
+
+  let navigate = useNavigate()
 
   const [display, setDisplay] = useState('');
   const [email, setEmail] = useState('')
@@ -22,6 +25,7 @@ const SignUp = () => {
             }
           },);
           console.log(response)
+          navigate('/stories')
       } 
       catch (err) {
           console.log(err)
