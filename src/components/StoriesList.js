@@ -26,6 +26,11 @@ const StoriesList = (props) => {
         navigate(`/stories/${id}`)
     }
 
+    const handleUserSelect = (id) => {
+        navigate(`/users/${id}`)
+    }
+
+
     return (
         <>
             {stories && stories.map((item) => {
@@ -34,7 +39,7 @@ const StoriesList = (props) => {
                         <h1 onClick={() => handleStorySelect(item.Story.id)}>Name: {item.Story.character}</h1> 
                         <h2>Party: {item.Story.party}</h2>
                         <p>{item.Story.story}</p>
-                        <p>Created by: {item.Story.user.display_name}</p>
+                        <p onClick={() => handleUserSelect(item.Story.user.id)}>Created by: {item.Story.user.display_name}</p>
                         <p>ID: {item.Story.id}</p>
                         <p>Likes: {item.likes}</p>
                     </div>

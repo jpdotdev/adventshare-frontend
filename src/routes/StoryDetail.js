@@ -48,6 +48,10 @@ const StoryDetail = () => {
         navigate(`/stories/${id}/update`)
     }
 
+    const handleUserSelect = (id) => {
+        navigate(`/users/${id}`)
+    }
+
     console.log(jwt)
     console.log(selectedStory)
 
@@ -56,7 +60,7 @@ const StoryDetail = () => {
             <h1>Name: {selectedStory && selectedStory.Story.character}</h1> 
             <h2>Party: {selectedStory && selectedStory.Story.party}</h2>
             <p>{selectedStory && selectedStory.Story.story}</p>
-            <p>Created by: {selectedStory && selectedStory.Story.user.display_name}</p>
+            <p onClick={() => handleUserSelect(selectedStory.Story.user.id)}>Created by: {selectedStory && selectedStory.Story.user.display_name}</p>
             <p>Likes: {selectedStory && selectedStory.likes}</p>
             <button onClick={() => handleDelete(selectedStory.Story.id)}> Delete Story </button>
             <button onClick={() => handleUpdate(selectedStory.Story.id)}> Update Story </button>
