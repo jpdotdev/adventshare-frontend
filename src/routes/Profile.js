@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import useLocalState from "../hooks/useLocalStorage"
 
 import Adventshare from "../APIs/Adventshare"
 
@@ -7,6 +8,7 @@ import Adventshare from "../APIs/Adventshare"
 const Profile = () => {
 
     let navigate = useNavigate()
+    const [jwt, setJwt] = useLocalState('', 'jwt')
 
     const { id } = useParams()
     const [user, setUser] = useState('')
@@ -26,7 +28,7 @@ const Profile = () => {
         };
 
         fetchProfile()
-    }, [])
+    }, [id])
 
 
     useEffect(() => {
@@ -47,9 +49,24 @@ const Profile = () => {
         navigate(`/stories/${id}`)
     }
 
-    const filteredUserStories = userStories?.filter((s) => s.Story.user.id == id)
+    const filteredUserStories = userStories?.filter((s) => s.Story.user.id === id)
     console.log(filteredUserStories)
-    
+
+
+    const handleUserDelete = async (id) => {
+        try { 
+            const response = await Adventshare.delete(`/users/${id}`, {
+            headers : {
+                authorization: `bearer ${jwt}`
+              }
+        });
+        console.log(response)
+        navigate('/');
+
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
 
     return (
@@ -66,6 +83,10 @@ const Profile = () => {
                     </div>
                 )   
             })}
+
+            <button onClick={() => handleUserDelete(id)}>
+                <span> Delete Account </span>
+            </button>
         </div>
     )
 }
