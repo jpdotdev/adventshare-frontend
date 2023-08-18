@@ -9,7 +9,7 @@ const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('');
   const [jwt, setJwt] = useLocalState('', 'jwt')
-  // const [user_id, setUser_id] = useLocalState('', 'user_id')
+  const [user_id, setUser_id] = useLocalState('', 'user_id')
   
 
     
@@ -26,7 +26,8 @@ const Login = () => {
           },);
 
           setJwt(response.data.access_token)
-          console.log(response)
+          setUser_id(response.data.user_id)
+          console.log(response.data)
           window.location.href = '/stories'
       } 
       catch (err) {
@@ -34,8 +35,9 @@ const Login = () => {
       }
      
     }
-  
+
     console.log(jwt)
+    console.log(user_id)
 
   return(
     <form onSubmit={handleSubmit}>

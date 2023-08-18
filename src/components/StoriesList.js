@@ -12,7 +12,6 @@ const StoriesList = (props) => {
             try {
                 const response = await Adventshare.get('/stories')
                 setStories(response.data)
-                console.log(response.data)
                } catch(err) {
                     console.log(err)
                }
