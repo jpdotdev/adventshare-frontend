@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom'
 
 const AddStory = () => {
 
-    let navigate = useNavigate()
 
     const {addStories} = useContext(StoriesContext)
     const [character, setCharacter] = useState("")

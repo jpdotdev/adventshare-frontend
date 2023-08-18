@@ -26,7 +26,7 @@ const Login = () => {
           },);
 
           setJwt(response.data.access_token)
-          console.log(response.data)
+          console.log(response)
           window.location.href = '/stories'
       } 
       catch (err) {
