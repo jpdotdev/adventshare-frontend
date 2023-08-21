@@ -28,7 +28,9 @@ const Profile = () => {
         };
 
         fetchProfile()
-    }, [id])
+    }, [])
+
+    console.log(user)
 
 
     useEffect(() => {
@@ -45,13 +47,10 @@ const Profile = () => {
 
     }, [])
 
+
     const handleStorySelect = (id) => {
         navigate(`/stories/${id}`)
     }
-
-    const filteredUserStories = userStories?.filter((s) => s.Story.user.id === id)
-    console.log(filteredUserStories)
-
 
     const handleUserDelete = async (id) => {
         try { 
@@ -68,6 +67,11 @@ const Profile = () => {
         }
     }
 
+    let filteredUserStories = userStories?.filter((s) => s.Story.user.id == id)
+    console.log(id)
+    console.log(userStories)
+    console.log(filteredUserStories)
+
 
     return (
         <div>
@@ -78,7 +82,6 @@ const Profile = () => {
                         <h1 onClick={() => handleStorySelect(item.Story.id)}>Name: {item.Story.character}</h1> 
                         <h2>Party: {item.Story.party}</h2>
                         <p>{item.Story.story}</p>
-                        <p>Created by: {item.Story.user.display_name}</p>
                         <p>Likes: {item.likes}</p>
                     </div>
                 )   

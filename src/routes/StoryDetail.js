@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react"
+import { useContext, useEffect, useState} from "react"
 import { useParams } from "react-router-dom"
 import { StoriesContext } from "../context/StoriesContext"
 import Adventshare from "../APIs/Adventshare"
@@ -8,10 +8,12 @@ import { useNavigate } from "react-router-dom"
 const StoryDetail = () => {
 
     let navigate = useNavigate()
-
+    
     const { id } = useParams()
     const {selectedStory, setSelectedStory} = useContext(StoriesContext)
     const [jwt, setJwt] = useLocalState('', 'jwt')
+    const [user_id, setUser_id] = useLocalState('', 'user_id')
+
 
     useEffect(() => {
         const fetchStory = async () => {
@@ -25,18 +27,19 @@ const StoryDetail = () => {
             }
             
         };
-
+        
         fetchStory()
+
     }, [])
+
 
     const handleDelete = async (id) => {
         try { 
-            const response = await Adventshare.delete(`/stories/${id}`, {
+            await Adventshare.delete(`/stories/${id}`, {
             headers : {
                 authorization: `bearer ${jwt}`
               }
         });
-        console.log(response)
         navigate('/stories');
 
         } catch (err) {
@@ -52,8 +55,6 @@ const StoryDetail = () => {
         navigate(`/users/${id}`)
     }
 
-    console.log(jwt)
-    console.log(selectedStory)
 
     return (
         <div>
@@ -67,5 +68,6 @@ const StoryDetail = () => {
         </div>
     )
 }
+
 
 export default StoryDetail
