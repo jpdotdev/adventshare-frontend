@@ -13,6 +13,14 @@ const Profile = () => {
     const { id } = useParams()
     const [user, setUser] = useState('')
     const [userStories, setUserStories] = useState()
+    const [user_id, setUser_id] = useLocalState('', 'user_id')
+
+    let signedIn;
+    if (user.id == user_id) {
+        signedIn = true
+    } else {
+        signedIn = false
+    }
 
     useEffect(() => {
         const fetchProfile = async () => {
@@ -29,8 +37,6 @@ const Profile = () => {
 
         fetchProfile()
     }, [])
-
-    console.log(user)
 
 
     useEffect(() => {
@@ -59,7 +65,6 @@ const Profile = () => {
                 authorization: `bearer ${jwt}`
               }
         });
-        console.log(response)
         navigate('/');
 
         } catch (err) {
@@ -68,10 +73,26 @@ const Profile = () => {
     }
 
     let filteredUserStories = userStories?.filter((s) => s.Story.user.id == id)
-    console.log(id)
-    console.log(userStories)
-    console.log(filteredUserStories)
 
+    const handleDelete = async (id) => {
+        try { 
+            await Adventshare.delete(`/stories/${id}`, {
+            headers : {
+                authorization: `bearer ${jwt}`
+              }
+        });
+        navigate(`/stories`);
+
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    const handleUpdate = async (id) => {
+        navigate(`/stories/${id}/update`)
+    }
+
+    console.log(signedIn)
 
     return (
         <div>
@@ -83,13 +104,15 @@ const Profile = () => {
                         <h2>Party: {item.Story.party}</h2>
                         <p>{item.Story.story}</p>
                         <p>Likes: {item.likes}</p>
+                        { signedIn && (<button onClick={() => handleDelete(item.Story.id)}> Delete Story </button> )}
+                        { signedIn && (<button onClick={() => handleUpdate(item.Story.id)}> Update Story </button> )}
                     </div>
                 )   
             })}
 
-            <button onClick={() => handleUserDelete(id)}>
+            { signedIn && (<button onClick={() => handleUserDelete(id)}>
                 <span> Delete Account </span>
-            </button>
+            </button> )}
         </div>
     )
 }

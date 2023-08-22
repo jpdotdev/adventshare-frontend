@@ -11,8 +11,6 @@ const StoryDetail = () => {
     
     const { id } = useParams()
     const {selectedStory, setSelectedStory} = useContext(StoriesContext)
-    const [jwt, setJwt] = useLocalState('', 'jwt')
-    const [user_id, setUser_id] = useLocalState('', 'user_id')
 
 
     useEffect(() => {
@@ -33,23 +31,7 @@ const StoryDetail = () => {
     }, [])
 
 
-    const handleDelete = async (id) => {
-        try { 
-            await Adventshare.delete(`/stories/${id}`, {
-            headers : {
-                authorization: `bearer ${jwt}`
-              }
-        });
-        navigate('/stories');
-
-        } catch (err) {
-            console.log(err)
-        }
-    }
-
-    const handleUpdate = async (id) => {
-        navigate(`/stories/${id}/update`)
-    }
+   
 
     const handleUserSelect = (id) => {
         navigate(`/users/${id}`)
@@ -63,8 +45,6 @@ const StoryDetail = () => {
             <p>{selectedStory && selectedStory.Story.story}</p>
             <p onClick={() => handleUserSelect(selectedStory.Story.user.id)}>Created by: {selectedStory && selectedStory.Story.user.display_name}</p>
             <p>Likes: {selectedStory && selectedStory.likes}</p>
-            <button onClick={() => handleDelete(selectedStory.Story.id)}> Delete Story </button>
-            <button onClick={() => handleUpdate(selectedStory.Story.id)}> Update Story </button>
         </div>
     )
 }
