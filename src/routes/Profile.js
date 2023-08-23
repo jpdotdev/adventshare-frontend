@@ -102,7 +102,7 @@ const Profile = () => {
                     <div key={item.id}>
                         <h1 onClick={() => handleStorySelect(item.Story.id)}>Name: {item.Story.character}</h1> 
                         <h2>Party: {item.Story.party}</h2>
-                        <p>{item.Story.story}</p>
+                        <p>{item.Story.story.substring(0,250)}</p>
                         <p>Likes: {item.likes}</p>
                         { signedIn && (<button onClick={() => handleDelete(item.Story.id)}> Delete Story </button> )}
                         { signedIn && (<button onClick={() => handleUpdate(item.Story.id)}> Update Story </button> )}

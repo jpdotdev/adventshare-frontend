@@ -11,6 +11,7 @@ const StoryDetail = () => {
     
     const { id } = useParams()
     const {selectedStory, setSelectedStory} = useContext(StoriesContext)
+    const [jwt, setJwt] = useLocalState('', 'jwt')
 
 
     useEffect(() => {
@@ -29,13 +30,46 @@ const StoryDetail = () => {
         fetchStory()
 
     }, [])
-
-
    
 
     const handleUserSelect = (id) => {
         navigate(`/users/${id}`)
     }
+
+    const likeStory = async (id) => {
+        try {
+            const response = await Adventshare.post("/likes", {
+                story_id: id,
+                direction: 1
+            }, {
+                headers: {
+                  authorization: `bearer ${jwt}`
+                }
+            });
+            console.log(response)
+        } 
+        catch (err) {
+            console.log(err)
+        }
+    }
+
+    const dislikeStory = async (id) => {
+        try {
+            const response = await Adventshare.post("/likes", {
+                story_id: id,
+                direction: 0
+            }, {
+                headers: {
+                  authorization: `bearer ${jwt}`
+                }
+            });
+            console.log(response)
+        } 
+        catch (err) {
+            console.log(err)
+        }
+    }
+
 
 
     return (
@@ -45,6 +79,8 @@ const StoryDetail = () => {
             <p>{selectedStory && selectedStory.Story.story}</p>
             <p onClick={() => handleUserSelect(selectedStory.Story.user.id)}>Created by: {selectedStory && selectedStory.Story.user.display_name}</p>
             <p>Likes: {selectedStory && selectedStory.likes}</p>
+            <button onClick={() => likeStory(selectedStory.Story.id)}>Like</button>
+            <button onClick={() => dislikeStory(selectedStory.Story.id)}>Dislike</button>
         </div>
     )
 }
