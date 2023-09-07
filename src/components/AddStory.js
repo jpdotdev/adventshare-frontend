@@ -28,9 +28,14 @@ const AddStory = () => {
             addStories(response.data)
             console.log(response)
             window.location.href = '/stories'
+            
         } 
         catch (err) {
             console.log(err)
+            if (err.response.status == 401) {
+                setJwt('')
+                window.location.href = '/login'
+            }
         }
     }
 

@@ -27,7 +27,6 @@ const Login = () => {
 
           setJwt(response.data.access_token)
           setUser_id(response.data.user_id)
-          console.log(response.data)
           window.location.href = '/stories'
       } 
       catch (err) {
@@ -35,9 +34,7 @@ const Login = () => {
       }
      
     }
-
-    console.log(jwt)
-    console.log(user_id)
+    
 
   return(
     <form onSubmit={handleSubmit}>

@@ -50,6 +50,10 @@ const StoryDetail = () => {
         } 
         catch (err) {
             console.log(err)
+            if (err.response.status == 401) {
+                setJwt('')
+                window.location.href = '/login'
+            }
         }
     }
 
@@ -67,6 +71,10 @@ const StoryDetail = () => {
         } 
         catch (err) {
             console.log(err)
+            if (err.response.status == 401) {
+                setJwt('')
+                window.location.href = '/login'
+            }
         }
     }
 
