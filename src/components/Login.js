@@ -25,6 +25,7 @@ const Login = () => {
             }
           },);
 
+          
           setJwt(response.data.access_token)
           setUser_id(response.data.user_id)
           window.location.href = '/stories'
