@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import useLocalState from "../hooks/useLocalStorage"
-
 import Adventshare from "../APIs/Adventshare"
 
 
@@ -104,7 +103,7 @@ const Profile = () => {
                         <h2>Party: {item.Story.party}</h2>
                         <p>{item.Story.story.substring(0,250)}</p>
                         <p>Likes: {item.likes}</p>
-                        { signedIn && (<button onClick={() => handleDelete(item.Story.id)}> Delete Story </button> )}
+                        { signedIn && (<button onClick={() => { if (window.confirm("Are you sure you want to delete this story?")) handleDelete(item.Story.id)}}> Delete Story </button> )}
                         { signedIn && (<button onClick={() => handleUpdate(item.Story.id)}> Update Story </button> )}
                     </div>
                 )   
