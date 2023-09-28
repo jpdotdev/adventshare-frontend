@@ -2,9 +2,7 @@ import React from "react";
 import UpdateStory from "../components/UpdateStory";
 
 const Update = () => {
-    return (
-        <UpdateStory />
-    )
-}
+  return <UpdateStory />;
+};
 
-export default Update
+export default Update;
