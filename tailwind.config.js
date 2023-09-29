@@ -7,9 +7,14 @@ module.exports = {
         dragon: "url('./assets/dragon.jpg')",
       },
     },
+    fontFamily: {
+      CinzelDeco: "Cinzel Decorative",
+      Fauna: "Fauna One",
+      Cinzel: "Cinzel",
+    },
     colors: {
       asred: "#DB3838",
-      trgray: "RGB(155, 155, 155, .54)",
+      trgray: "RGBA(68, 68, 68, .54)",
     },
   },
   plugins: [],
