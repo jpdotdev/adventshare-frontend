@@ -1,0 +1,13 @@
+.navigation {
+  font-size: min(3vw, 2rem);
+  color: white;
+}
+
+.nav-items {
+  font-size: min(2vw, 1.5rem);
+}
+
+.user-icon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%)
+    contrast(103%);
+}
