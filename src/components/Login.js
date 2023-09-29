@@ -39,10 +39,10 @@ const Login = () => {
     <div className="flex flex-col items-center">
       <form
         onSubmit={handleSubmit}
-        className="login-signup mt-[10rem] mb-6 mx-auto px-6 py-16 border border-white w-[80%] max-w-xl text-center font-CinzelDeco"
+        className="login-signup flex flex-col items-center mt-[10rem] mb-6 mx-auto px-2 py-16 border border-white w-[80%] max-w-xl text-center font-CinzelDeco"
       >
-        <p className="welcomels mb-10">Welcome Adventurer</p>
-        <label className="flex flex-row mx-auto m-6 w-4/5 items-center">
+        <p className="welcomels mb-10 text-hYellow">Welcome Adventurer</p>
+        <label className="flex flex-row mx-auto mb-6 w-4/5 items-center justify-between">
           <p className="mr-4">Email:</p>
           <input
             value={email}
@@ -51,7 +51,7 @@ const Login = () => {
             className="font-Fauna text-dkpurple p-2"
           />
         </label>
-        <label className="flex flex-row mx-auto mb-10 items-center">
+        <label className="flex flex-row mx-auto mb-10 items-center justify-between">
           <p className="mr-4">Password:</p>
           <input
             value={password}
