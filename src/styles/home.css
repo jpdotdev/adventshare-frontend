@@ -1,12 +1,12 @@
 .welcome {
-  font-size: min(10vw, 9rem);
+  font-size: min(6vw, 5rem);
   font-family: Cinzel, serif;
 }
 
 .home-text {
-  font-size: min(5vw, 3rem);
+  font-size: min(2.5vw, 2rem);
 }
 
 .allstories-button {
-  font-size: min(3vw, 1.2rem);
+  font-size: min(2vw, 1.2rem);
 }
