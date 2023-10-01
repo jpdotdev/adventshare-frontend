@@ -8,7 +8,7 @@ const Home = () => {
     <div className="flex flex-row">
       <img src={dragon} alt="" className="w-1/2" />
       <div className="w-3/5  py-16 px-auto mt-12 mb-8 mx-auto text-center rounded-[4rem]  max-w-4xl">
-        <h1 className="welcome text-asred font-bold px-4 mt-4">
+        <h1 className="welcome text-hYellow font-bold px-4 mt-4">
           {" "}
           Welcome to Adventshare!{" "}
         </h1>

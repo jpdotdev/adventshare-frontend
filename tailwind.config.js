@@ -15,6 +15,9 @@ module.exports = {
     colors: {
       asred: "#DB3838",
       trgray: "RGBA(68, 68, 68, .54)",
+      beige: "#B4A388",
+      dkpurple: "#26212d",
+      hYellow: "#E6B464",
     },
   },
   plugins: [],
