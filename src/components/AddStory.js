@@ -41,24 +41,33 @@ const AddStory = () => {
   return (
     <div>
       <form>
-        <input
-          value={character}
-          onChange={(e) => setCharacter(e.target.value)}
-          type="text"
-          placeholder="Character Name"
-        />
-        <input
-          value={party}
-          onChange={(e) => setParty(e.target.value)}
-          type="text"
-          placeholder="Party Name"
-        />
-        <textarea
-          value={story}
-          onChange={(e) => setStory(e.target.value)}
-          type="text"
-          placeholder="Story Entry"
-        />
+        <div>
+          <label>Character Name</label>
+          <input
+            value={character}
+            onChange={(e) => setCharacter(e.target.value)}
+            type="text"
+            placeholder="Character Name"
+          />
+        </div>
+        <div>
+          <label>Party Name</label>
+          <input
+            value={party}
+            onChange={(e) => setParty(e.target.value)}
+            type="text"
+            placeholder="Party Name"
+          />
+        </div>
+        <div>
+          <label>Story Entry</label>
+          <textarea
+            value={story}
+            onChange={(e) => setStory(e.target.value)}
+            type="text"
+            placeholder="Story Entry"
+          />
+        </div>
       </form>
 
       <button type="submit" onClick={handleSubmit}>
