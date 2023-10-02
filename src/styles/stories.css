@@ -1,0 +1,11 @@
+.header-all-stories {
+  font-size: min(9vw, 5rem);
+}
+
+.story-preview {
+  font-size: min(2.3vw, 1.3rem);
+}
+
+.story-details {
+  font-size: min(2.7vw, 1.3rem);
+}

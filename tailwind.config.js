@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         dragon: "url('./assets/dragon.jpg')",
+        adventurers: "url('./assets/adventurers.jpg')",
       },
     },
     fontFamily: {
@@ -14,7 +15,7 @@ module.exports = {
     },
     colors: {
       asred: "#DB3838",
-      trgray: "RGBA(68, 68, 68, .54)",
+      trgray: "RGBA(155, 155, 155, .54)",
       beige: "#B4A388",
       dkpurple: "#26212d",
       hYellow: "#E6B464",

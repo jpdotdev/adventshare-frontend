@@ -2,6 +2,10 @@ import { useContext, useEffect } from "react";
 import Adventshare from "../APIs/Adventshare";
 import { StoriesContext } from "../context/StoriesContext";
 import { useNavigate } from "react-router-dom";
+import convertToRoman from "../utilities/helperFunctions";
+
+import "../styles/stories.css";
+import divider from "../assets/divider.svg";
 
 const StoriesList = (props) => {
   const { stories, setStories } = useContext(StoriesContext);
@@ -29,25 +33,49 @@ const StoriesList = (props) => {
   };
 
   return (
-    <>
+    <div className="all-stories h-full">
+      <div className="bg-adventurers bg-cover bg-no-repeat py-52 h-3/5 text-center">
+        <h1 className="header-all-stories font-CinzelDeco font-bold text-[#000000] bg-trgray my-28 mx-auto max-w-xl min-w-2/5 p-6 rounded-xl">
+          All Stories
+        </h1>
+      </div>
       {stories &&
         stories.map((item) => {
           return (
-            <div key={item.id}>
-              <h1 onClick={() => handleStorySelect(item.Story.id)}>
-                Name: {item.Story.character}
-              </h1>
-              <h2>Party: {item.Story.party}</h2>
-              <p>{item.Story.story.substring(0, 250)}</p>
-              <p onClick={() => handleUserSelect(item.Story.user.id)}>
-                Created by: {item.Story.user.display_name}
-              </p>
-              <p>ID: {item.Story.id}</p>
-              <p>Likes: {item.likes}</p>
+            <div
+              key={item.id}
+              className="bg-beige max-w-lg min-w-[60%] mx-auto my-6 px-3 py-6 text-[#000000] flex flex-row justify-between items-center shadow-inner shadow-dkpurple"
+            >
+              <div
+                className="w-2/5 mx-auto text-center cursor-pointer"
+                onClick={() => handleStorySelect(item.Story.id)}
+              >
+                <p className="underline underline-offset-4 mb-4">
+                  {`ID: ${convertToRoman(item.Story.id)}`}
+                </p>
+                <p className="story-preview">{`${item.Story.story.substring(
+                  0,
+                  250
+                )}...`}</p>
+              </div>
+              <img src={divider} alt="" className="py-10" />
+              <div className="story-details w-2/5 mx-auto px-4 justify-center">
+                <p className="py-2">Name: {item.Story.character}</p>
+                <p className="py-2">Party: {item.Story.party}</p>
+
+                <p
+                  onClick={() => handleUserSelect(item.Story.user.id)}
+                  className="py-2"
+                >
+                  Created by: {item.Story.user.display_name}
+                </p>
+
+                <p className="py-2">Likes: {item.likes}</p>
+              </div>
             </div>
           );
         })}
-    </>
+    </div>
   );
 };
 
