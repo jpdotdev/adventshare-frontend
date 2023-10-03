@@ -5,6 +5,8 @@ import Adventshare from "../APIs/Adventshare";
 import useLocalState from "../hooks/useLocalStorage";
 import { useNavigate } from "react-router-dom";
 
+import "../styles/stories.css";
+
 const StoryDetail = () => {
   let navigate = useNavigate();
 
@@ -78,18 +80,39 @@ const StoryDetail = () => {
   };
 
   return (
-    <div>
-      <h1>Name: {selectedStory && selectedStory.Story.character}</h1>
-      <h2>Party: {selectedStory && selectedStory.Story.party}</h2>
-      <p>{selectedStory && selectedStory.Story.story}</p>
-      <p onClick={() => handleUserSelect(selectedStory.Story.user.id)}>
-        Created by: {selectedStory && selectedStory.Story.user.display_name}
-      </p>
-      <p>Likes: {selectedStory && selectedStory.likes}</p>
-      <button onClick={() => likeStory(selectedStory.Story.id)}>Like</button>
-      <button onClick={() => dislikeStory(selectedStory.Story.id)}>
-        Dislike
-      </button>
+    <div className="bg-castle bg-cover bg-no-repeat h-full p-24">
+      <div className="p-16 bg-beige text-[#000] min-w-[70%] max-w-xl mx-auto mt-10">
+        <h1 className="mb-2 story-preview">
+          Name: {selectedStory && selectedStory.Story.character}
+        </h1>
+        <h2 className="mb-2 story-preview">
+          Party: {selectedStory && selectedStory.Story.party}
+        </h2>
+        <p className="mb-2 story-preview">
+          {selectedStory && selectedStory.Story.story}
+        </p>
+        <p
+          onClick={() => handleUserSelect(selectedStory.Story.user.id)}
+          className="mb-2 story-preview"
+        >
+          Created by: {selectedStory && selectedStory.Story.user.display_name}
+        </p>
+        <p className="mb-2 story-preview">
+          Likes: {selectedStory && selectedStory.likes}
+        </p>
+        <button
+          onClick={() => likeStory(selectedStory.Story.id)}
+          className="mb-2 story-preview"
+        >
+          Like
+        </button>
+        <button
+          onClick={() => dislikeStory(selectedStory.Story.id)}
+          className="mb-2 story-preview"
+        >
+          Dislike
+        </button>
+      </div>
     </div>
   );
 };

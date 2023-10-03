@@ -92,7 +92,7 @@ const Profile = () => {
           My Profile
         </h1>
         <div className="flex flex-row max-w-2xl min-w-[80%] mx-auto justify-between items-center">
-          <p className="display-name">{`@${user.display_name}`}</p>
+          <p className="display-name">{`@${user?.display_name}`}</p>
           {signedIn && (
             <button
               onClick={() => handleUserDelete(id)}
