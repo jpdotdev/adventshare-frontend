@@ -3,8 +3,6 @@ import Adventshare from "../APIs/Adventshare";
 import useLocalState from "../hooks/useLocalStorage";
 import { Link } from "react-router-dom";
 
-import "../styles/login-signup.css";
-
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -39,9 +37,9 @@ const Login = () => {
     <div className="flex flex-col items-center">
       <form
         onSubmit={handleSubmit}
-        className="login-signup flex flex-col items-center mt-[10rem] mb-6 mx-auto px-2 py-16 border border-white w-[80%] max-w-xl text-center font-CinzelDeco"
+        className="text-p4 flex flex-col items-center mt-[10rem] mb-6 mx-auto px-2 py-16 border border-white w-[80%] max-w-xl text-center font-CinzelDeco"
       >
-        <p className="welcomels mb-10 text-hYellow">Welcome Adventurer</p>
+        <p className="text-h3 mb-10 text-hYellow">Welcome Adventurer</p>
         <label className="flex flex-row mx-auto mb-6 w-4/5 items-center justify-between">
           <p className="mr-4">Email:</p>
           <input

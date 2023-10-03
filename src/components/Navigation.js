@@ -31,12 +31,12 @@ const Navigation = () => {
 
   return (
     <div>
-      <nav className="navigation flex flex-row fixed top-0 left-0 pt-4 right-0 justify-between items-center w-full">
-        <Link to="/" className="font-CinzelDeco w-1/3 pl-4">
+      <nav className="flex flex-row fixed top-0 left-0 pt-4 right-0 justify-between items-center w-full">
+        <Link to="/" className="text-h4 font-CinzelDeco w-1/3 pl-4">
           {" "}
           Adventshare{" "}
         </Link>
-        <ul className="nav-items flex flex-row items-center justify-end w-2/3 ml-auto mr-4">
+        <ul className="text-p1 flex flex-row items-center justify-end w-2/3 ml-auto mr-4">
           <li className="w-1/4 text-end">
             {" "}
             <Link to="/stories"> All Stories </Link>{" "}

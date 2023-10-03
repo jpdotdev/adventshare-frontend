@@ -4,7 +4,6 @@ import { StoriesContext } from "../context/StoriesContext";
 import { useNavigate } from "react-router-dom";
 import convertToRoman from "../utilities/helperFunctions";
 
-import "../styles/stories.css";
 import divider from "../assets/divider.svg";
 
 const StoriesList = (props) => {
@@ -35,7 +34,7 @@ const StoriesList = (props) => {
   return (
     <div className="all-stories h-full">
       <div className="bg-adventurers bg-cover bg-no-repeat py-52 h-3/5 text-center">
-        <h1 className="header-all-stories font-CinzelDeco font-bold text-[#000000] bg-trgray my-28 mx-auto max-w-xl min-w-2/5 p-6 rounded-xl">
+        <h1 className="text-h1 font-CinzelDeco font-bold text-[#000000] bg-trgray my-28 mx-auto max-w-xl min-w-2/5 p-6 rounded-xl">
           All Stories
         </h1>
       </div>
@@ -53,13 +52,13 @@ const StoriesList = (props) => {
                 <p className="underline underline-offset-4 mb-4">
                   {`ID: ${convertToRoman(item.Story.id)}`}
                 </p>
-                <p className="story-preview">{`${item.Story.story.substring(
+                <p className="text-p2">{`${item.Story.story.substring(
                   0,
                   250
                 )}...`}</p>
               </div>
               <img src={divider} alt="" className="py-10" />
-              <div className="story-details w-2/5 mx-auto px-4 justify-center">
+              <div className="text-p3 w-2/5 mx-auto px-4 justify-center">
                 <p className="py-2">Name: {item.Story.character}</p>
                 <p className="py-2">Party: {item.Story.party}</p>
 
