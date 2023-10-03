@@ -5,8 +5,6 @@ import Adventshare from "../APIs/Adventshare";
 import useLocalState from "../hooks/useLocalStorage";
 import { useNavigate } from "react-router-dom";
 
-import "../styles/stories.css";
-
 const StoryDetail = () => {
   let navigate = useNavigate();
 

@@ -3,8 +3,6 @@ import Adventshare from "../APIs/Adventshare";
 import { StoriesContext } from "../context/StoriesContext";
 import useLocalState from "../hooks/useLocalStorage";
 
-import "../styles/createstory.css";
-
 const AddStory = () => {
   const { addStories } = useContext(StoriesContext);
   const [character, setCharacter] = useState("");
@@ -42,10 +40,10 @@ const AddStory = () => {
 
   return (
     <div className="mt-32">
-      <h1 className="header-create-story mb-10 text-center font-CinzelDeco font-bold mx-auto max-w-xl min-w-2/5">
+      <h1 className="text-h2 mb-10 text-center font-CinzelDeco font-bold mx-auto max-w-xl min-w-2/5">
         Create a Story
       </h1>
-      <div className="create-story min-w-[50%] max-w-xl border border-white mx-auto py-8 px-10 font-CinzelDeco">
+      <div className="text-p5 min-w-[50%] max-w-xl border border-white mx-auto py-8 px-10 font-CinzelDeco">
         <form className=" mx-auto">
           <div className="flex flex-row justify-between min-w-[60%] max-w-lg m-3 items-center">
             <label for="character-name">Character Name:</label>

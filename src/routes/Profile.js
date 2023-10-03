@@ -3,8 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import useLocalState from "../hooks/useLocalStorage";
 import Adventshare from "../APIs/Adventshare";
 
-import "../styles/profile.css";
-
 const Profile = () => {
   let navigate = useNavigate();
   const [jwt, setJwt] = useLocalState("", "jwt");
@@ -88,11 +86,11 @@ const Profile = () => {
   return (
     <div>
       <div className="bg-challenger bg-cover bg-no-repeat pt-52 pb-16 h-3/5 flex flex-col items-center px-auto mb-16">
-        <h1 className="header-all-stories font-CinzelDeco font-bold text-dkpurple bg-trgray mt-28 mb-52 mx-auto max-w-xl min-w-2/5 p-6 rounded-xl">
+        <h1 className="text-h1 font-CinzelDeco font-bold text-dkpurple bg-trgray mt-28 mb-52 mx-auto max-w-xl min-w-2/5 p-6 rounded-xl">
           My Profile
         </h1>
         <div className="flex flex-row max-w-2xl min-w-[80%] mx-auto justify-between items-center">
-          <p className="display-name">{`@${user?.display_name}`}</p>
+          <p className="text-p4">{`@${user?.display_name}`}</p>
           {signedIn && (
             <button
               onClick={() => handleUserDelete(id)}
@@ -113,11 +111,11 @@ const Profile = () => {
             >
               <p
                 onClick={() => handleStorySelect(item.Story.id)}
-                className="char-name mb-4"
+                className="text-p4 mb-4"
               >
                 Name: {item.Story.character}
               </p>
-              <p className="party-name mb-3">Party: {item.Story.party}</p>
+              <p className="text-p2 mb-3">Party: {item.Story.party}</p>
               <p className="story mb-3">{`${item.Story.story.substring(
                 0,
                 250

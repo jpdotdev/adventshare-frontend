@@ -36,9 +36,9 @@ const SignUp = () => {
     <div className="flex flex-col items-center">
       <form
         onSubmit={handleSubmit}
-        className="login-signup mt-[10rem] mb-6 mx-auto px-2 py-16 border border-white w-[80%] max-w-xl font-CinzelDeco flex flex-col items-center"
+        className="text-p4 mt-[10rem] mb-6 mx-auto px-2 py-16 border border-white w-[80%] max-w-xl font-CinzelDeco flex flex-col items-center"
       >
-        <p className="welcomels mb-10 text-hYellow">Welcome Adventurer</p>
+        <p className="text-h3 mb-10 text-hYellow">Welcome Adventurer</p>
         <label className="flex flex-row mx-auto mb-6 w-4/5 items-center justify-between">
           <p className="mr-4">Display Name:</p>
           <input
