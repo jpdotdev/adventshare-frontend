@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import useLocalState from "../hooks/useLocalStorage";
 import Adventshare from "../APIs/Adventshare";
 
+import "../styles/profile.css";
+
 const Profile = () => {
   let navigate = useNavigate();
   const [jwt, setJwt] = useLocalState("", "jwt");
@@ -85,47 +87,72 @@ const Profile = () => {
 
   return (
     <div>
-      <h1> {user.display_name} </h1>
+      <div className="bg-challenger bg-cover bg-no-repeat pt-52 pb-16 h-3/5 flex flex-col items-center px-auto mb-16">
+        <h1 className="header-all-stories font-CinzelDeco font-bold text-dkpurple bg-trgray mt-28 mb-52 mx-auto max-w-xl min-w-2/5 p-6 rounded-xl">
+          My Profile
+        </h1>
+        <div className="flex flex-row max-w-2xl min-w-[80%] mx-auto justify-between items-center">
+          <p className="display-name">{`@${user.display_name}`}</p>
+          {signedIn && (
+            <button
+              onClick={() => handleUserDelete(id)}
+              className="bg-asred p-2"
+            >
+              <span> Delete Account </span>
+            </button>
+          )}
+        </div>
+      </div>
+
       {filteredUserStories &&
         filteredUserStories.map((item) => {
           return (
-            <div key={item.id}>
-              <h1 onClick={() => handleStorySelect(item.Story.id)}>
+            <div
+              key={item.id}
+              className="bg-beige max-w-lg min-w-[60%] mx-auto my-6 px-3 py-6 text-[#000000] flex flex-col justify-between shadow-inner shadow-dkpurple"
+            >
+              <p
+                onClick={() => handleStorySelect(item.Story.id)}
+                className="char-name mb-4"
+              >
                 Name: {item.Story.character}
-              </h1>
-              <h2>Party: {item.Story.party}</h2>
-              <p>{item.Story.story.substring(0, 250)}</p>
-              <p>Likes: {item.likes}</p>
-              {signedIn && (
-                <button
-                  onClick={() => {
-                    if (
-                      window.confirm(
-                        "Are you sure you want to delete this story?"
+              </p>
+              <p className="party-name mb-3">Party: {item.Story.party}</p>
+              <p className="story mb-3">{`${item.Story.story.substring(
+                0,
+                250
+              )}...`}</p>
+              <p className="mb-3">Likes: {item.likes}</p>
+              <div className="mt-2">
+                {signedIn && (
+                  <button
+                    onClick={() => {
+                      if (
+                        window.confirm(
+                          "Are you sure you want to delete this story?"
+                        )
                       )
-                    )
-                      handleDelete(item.Story.id);
-                  }}
-                >
-                  {" "}
-                  Delete Story{" "}
-                </button>
-              )}
-              {signedIn && (
-                <button onClick={() => handleUpdate(item.Story.id)}>
-                  {" "}
-                  Update Story{" "}
-                </button>
-              )}
+                        handleDelete(item.Story.id);
+                    }}
+                    className="bg-asred p-2 text-[#fff] mr-4"
+                  >
+                    {" "}
+                    Delete Story{" "}
+                  </button>
+                )}
+                {signedIn && (
+                  <button
+                    onClick={() => handleUpdate(item.Story.id)}
+                    className="bg-[#000] p-2 text-[#fff]"
+                  >
+                    {" "}
+                    Update Story{" "}
+                  </button>
+                )}
+              </div>
             </div>
           );
         })}
-
-      {signedIn && (
-        <button onClick={() => handleUserDelete(id)}>
-          <span> Delete Account </span>
-        </button>
-      )}
     </div>
   );
 };
