@@ -6,6 +6,8 @@ module.exports = {
       backgroundImage: {
         dragon: "url('./assets/dragon.jpg')",
         adventurers: "url('./assets/adventurers.jpg')",
+        castle: "url('./assets/castle.jpg')",
+        challenger: "url('./assets/challenger.jpg')",
       },
     },
     fontFamily: {
