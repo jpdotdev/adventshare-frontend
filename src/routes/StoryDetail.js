@@ -93,7 +93,7 @@ const StoryDetail = () => {
           onClick={() => handleUserSelect(selectedStory.Story.user.id)}
           className="mb-2 story-preview"
         >
-          Created by: {selectedStory && selectedStory.Story.user.display_name}
+          Author: {selectedStory && selectedStory.Story.user.display_name}
         </p>
         <p className="mb-2 story-preview">
           Likes: {selectedStory && selectedStory.likes}

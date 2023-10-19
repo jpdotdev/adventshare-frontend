@@ -87,7 +87,7 @@ const Profile = () => {
     <div>
       <div className="bg-challenger bg-cover bg-no-repeat pt-52 pb-16 h-3/5 flex flex-col items-center px-auto mb-16">
         <h1 className="text-h1 font-CinzelDeco font-bold text-dkpurple bg-trgray mt-28 mb-52 mx-auto max-w-xl min-w-2/5 p-6 rounded-xl">
-          My Profile
+          Profile
         </h1>
         <div className="flex flex-row max-w-2xl min-w-[80%] mx-auto justify-between items-center">
           <p className="text-p4">{`@${user?.display_name}`}</p>
@@ -113,7 +113,7 @@ const Profile = () => {
                 onClick={() => handleStorySelect(item.Story.id)}
                 className="text-p4 mb-4"
               >
-                Name: {item.Story.character}
+                Character: {item.Story.character}
               </p>
               <p className="text-p2 mb-3">Party: {item.Story.party}</p>
               <p className="story mb-3">{`${item.Story.story.substring(

@@ -49,9 +49,9 @@ const StoriesList = (props) => {
                 className="w-2/5 mx-auto text-center cursor-pointer"
                 onClick={() => handleStorySelect(item.Story.id)}
               >
-                <p className="underline underline-offset-4 mb-4">
+                {/* <p className="underline underline-offset-4 mb-4">
                   {`ID: ${convertToRoman(item.Story.id)}`}
-                </p>
+                </p> */}
                 <p className="text-p2">{`${item.Story.story.substring(
                   0,
                   250
@@ -59,14 +59,14 @@ const StoriesList = (props) => {
               </div>
               <img src={divider} alt="" className="py-10" />
               <div className="text-p3 w-2/5 mx-auto px-4 justify-center">
-                <p className="py-2">Name: {item.Story.character}</p>
+                <p className="py-2">Character: {item.Story.character}</p>
                 <p className="py-2">Party: {item.Story.party}</p>
 
                 <p
                   onClick={() => handleUserSelect(item.Story.user.id)}
                   className="py-2"
                 >
-                  Created by: {item.Story.user.display_name}
+                  Author: {item.Story.user.display_name}
                 </p>
 
                 <p className="py-2">Likes: {item.likes}</p>
