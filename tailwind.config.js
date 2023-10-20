@@ -3,17 +3,17 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     fontSize: {
-      mainHeader: "min(6vw, 5rem)",
-      h1: "min(9vw, 5rem)",
+      mainHeader: "min(8vw, 5rem)",
+      h1: "min(9vw, 6rem)",
       h2: "min(5vw, 3rem)",
       h3: "min(4vw, 2rem)",
       h4: "min(3vw, 2rem)",
-      p1: "min(2vw, 1.5rem)",
-      p2: "min(2.3vw, 1.3rem)",
+      p1: "min(4vw, 1.5rem)",
+      p2: "min(2.2vw, 1.3rem)",
       p3: "min(2.7vw, 1.3rem)",
       p4: "min(3vw, 1.5rem)",
       p5: "min(3vw, 1.3rem)",
-      buttonMain: "min(2vw, 1.2rem)",
+      buttonMain: "min(2.5vw, 1.2rem)",
     },
     extend: {
       backgroundImage: {

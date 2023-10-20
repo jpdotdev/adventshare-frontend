@@ -36,7 +36,7 @@ const Navigation = () => {
           {" "}
           Adventshare{" "}
         </Link>
-        <ul className="text-p1 flex flex-row items-center justify-end w-2/3 ml-auto mr-4">
+        <ul className="text-p2 flex flex-row items-center justify-end w-2/3 ml-auto mr-4">
           <li className="w-1/4 text-end">
             {" "}
             <Link to="/stories"> All Stories </Link>{" "}
