@@ -69,7 +69,7 @@ const Profile = () => {
 
   let filteredUserStories = userStories?.filter((s) => s.Story.user.id == id);
 
-  const handleDelete = async (id) => {
+  const handleStoryDelete = async (id) => {
     try {
       await Adventshare.delete(`/stories/${id}`, {
         headers: {
@@ -98,7 +98,11 @@ const Profile = () => {
           <p className="text-p4">{`@${user?.display_name}`}</p>
           {signedIn && (
             <button
-              onClick={() => { handleUserDelete(id); handleLogout(); }}
+              onClick={() => { if (
+                        window.confirm(
+                          "Are you sure you want to delete your account?"
+                        )
+                      ) handleUserDelete(id); handleLogout(); }}
               className="bg-asred p-2"
             >
               <span> Delete Account </span>
@@ -135,7 +139,7 @@ const Profile = () => {
                           "Are you sure you want to delete this story?"
                         )
                       )
-                        handleDelete(item.Story.id);
+                        handleStoryDelete(item.Story.id);
                     }}
                     className="bg-asred p-2 text-[#fff] mr-4"
                   >
