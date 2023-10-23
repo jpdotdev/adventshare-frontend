@@ -5,8 +5,8 @@ import Adventshare from "../APIs/Adventshare";
 
 const Profile = () => {
   let navigate = useNavigate();
-  const [jwt, setJwt] = useLocalState("", "jwt");
 
+  const [jwt, setJwt] = useLocalState("", "jwt");
   const { id } = useParams();
   const [user, setUser] = useState("");
   const [userStories, setUserStories] = useState();
@@ -49,17 +49,22 @@ const Profile = () => {
     navigate(`/stories/${id}`);
   };
 
+  const handleLogout = () => {
+    setJwt("");
+    setUser_id("");
+  };
+
   const handleUserDelete = async (id) => {
     try {
       const response = await Adventshare.delete(`/users/${id}`, {
         headers: {
           authorization: `bearer ${jwt}`,
-        },
+        }, 
       });
-      navigate("/");
     } catch (err) {
       console.log(err);
     }
+    window.location.href = "/";
   };
 
   let filteredUserStories = userStories?.filter((s) => s.Story.user.id == id);
@@ -93,7 +98,7 @@ const Profile = () => {
           <p className="text-p4">{`@${user?.display_name}`}</p>
           {signedIn && (
             <button
-              onClick={() => handleUserDelete(id)}
+              onClick={() => { handleUserDelete(id); handleLogout(); }}
               className="bg-asred p-2"
             >
               <span> Delete Account </span>
