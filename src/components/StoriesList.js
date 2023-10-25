@@ -33,8 +33,8 @@ const StoriesList = (props) => {
 
   return (
     <div className="all-stories h-full">
-      <div className="bg-adventurers bg-cover bg-no-repeat py-52 h-3/5 text-center">
-        <h1 className="text-h1 font-CinzelDeco font-bold text-[#000000] bg-trgray my-28 mx-auto max-w-xl min-w-2/5 p-6 rounded-xl">
+      <div className="bg-adventurers bg-cover bg-no-repeat py-52 h-3/5 text-center px-6">
+        <h1 className="text-h1 font-CinzelDeco font-bold text-[#000000] bg-trgray my-28 mx-auto min-w-[50%] max-w-md p-6 rounded-xl">
           All Stories
         </h1>
       </div>
