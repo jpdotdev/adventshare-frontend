@@ -78,8 +78,8 @@ const StoryDetail = () => {
   };
 
   return (
-    <div className="bg-castle bg-cover bg-no-repeat h-full p-24">
-      <div className="p-16 bg-beige text-[#000] min-w-[70%] max-w-xl mx-auto mt-10">
+    <div className="bg-castle bg-cover bg-no-repeat h-full p-10">
+      <div className="text-p2 p-10 bg-beige text-[#000] min-w-[70%] max-w-xl mx-auto mt-20">
         <h1 className="mb-2 story-preview">
           Name: {selectedStory && selectedStory.Story.character}
         </h1>
