@@ -25,8 +25,8 @@ const SignUp = () => {
           },
         }
       );
-      console.log(response);
-      navigate("/stories");
+      alert("Sign up successful! Please login with your new credentials")
+      window.location.href = "/login";
     } catch (err) {
       console.log(err);
     }
