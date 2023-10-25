@@ -9,7 +9,7 @@ module.exports = {
       h3: "min(4vw, 2rem)",
       h4: "min(3vw, 2rem)",
       p1: "min(4vw, 1.5rem)",
-      p2: "min(2.2vw, 1.3rem)",
+      p2: "min(2.5vw, 1.3rem)",
       p3: "min(2.7vw, 1.3rem)",
       p4: "min(3vw, 1.5rem)",
       p5: "min(3vw, 1.3rem)",
@@ -31,6 +31,7 @@ module.exports = {
     colors: {
       asred: "#DB3838",
       trgray: "RGBA(155, 155, 155, .54)",
+      dkgray: "RGBA(25, 26, 41, .54)",
       beige: "#B4A388",
       dkpurple: "#26212d",
       hYellow: "#E6B464",
