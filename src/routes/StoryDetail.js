@@ -104,6 +104,7 @@ const StoryDetail = () => {
         >
           Like
         </button>
+        <br></br>
         <button
           onClick={() => dislikeStory(selectedStory.Story.id)}
           className="mb-2 story-preview"

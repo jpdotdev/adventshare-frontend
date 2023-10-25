@@ -49,9 +49,6 @@ const StoriesList = (props) => {
                 className="w-2/5 mx-auto text-center cursor-pointer"
                 onClick={() => handleStorySelect(item.Story.id)}
               >
-                {/* <p className="underline underline-offset-4 mb-4">
-                  {`ID: ${convertToRoman(item.Story.id)}`}
-                </p> */}
                 <p className="text-p2">{`${item.Story.story.substring(
                   0,
                   250
