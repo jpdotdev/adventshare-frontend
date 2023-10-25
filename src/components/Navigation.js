@@ -31,25 +31,28 @@ const Navigation = () => {
 
   return (
     <div>
-      <nav className="flex flex-row fixed top-0 left-0 pt-4 right-0 justify-between items-center w-full">
+      <nav className=" bg-dkgray flex flex-row fixed top-0 left-0 py-4 right-0 justify-between items-center">
         <Link to="/" className="text-h4 font-CinzelDeco w-1/3 pl-4">
           {" "}
           Adventshare{" "}
         </Link>
-        <ul className="text-p2 flex flex-row items-center justify-end w-2/3 ml-auto mr-4">
-          <li className="w-1/4 text-end">
+        <ul className="text-p2 flex flex-row items-center justify-end max-w-lg min-w-[70%] ml-auto">
+          <li className="w-1/4 text-center">
             {" "}
             <Link to="/stories"> All Stories </Link>{" "}
           </li>
-          <li className="w-1/4 text-end">
+          <li className="w-1/4 text-center">
             {" "}
-            <Link to="/stories/create"> Create A Story </Link>{" "}
+            <Link to="/stories/create" className="p-1">
+              {" "}
+              Create A Story{" "}
+            </Link>{" "}
           </li>
 
           {!jwt && (
             <button
               onClick={() => handleSignupRoute()}
-              className="w-1/6 text-end"
+              className="w-1/4 text-center"
             >
               {" "}
               Sign up{" "}
@@ -58,14 +61,17 @@ const Navigation = () => {
           {!jwt && (
             <button
               onClick={() => handleLoginRoute()}
-              className="w-1/6 text-end"
+              className="w-1/4 text-center"
             >
               {" "}
               Log in{" "}
             </button>
           )}
           {jwt && (
-            <button onClick={() => handleLogout()} className="w-1/6 text-end">
+            <button
+              onClick={() => handleLogout()}
+              className="w-1/4 text-center"
+            >
               {" "}
               Log out{" "}
             </button>
@@ -73,7 +79,7 @@ const Navigation = () => {
           {jwt && (
             <li
               onClick={() => handleMyProfile(user_id)}
-              className="cursor-pointer w-1/6"
+              className="cursor-pointer w-1/4 text-center"
             >
               <img
                 src={userIcon}
