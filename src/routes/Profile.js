@@ -86,7 +86,6 @@ const Profile = () => {
     navigate(`/stories/${id}/update`);
   };
 
-  console.log(signedIn);
 
   return (
     <div>
@@ -120,7 +119,7 @@ const Profile = () => {
             >
               <p
                 onClick={() => handleStorySelect(item.Story.id)}
-                className="text-p4 mb-4"
+                className="text-p4 mb-4 cursor-pointer"
               >
                 Character: {item.Story.character}
               </p>

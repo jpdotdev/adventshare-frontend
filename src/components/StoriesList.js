@@ -60,7 +60,7 @@ const StoriesList = (props) => {
 
                 <p
                   onClick={() => handleUserSelect(item.Story.user.id)}
-                  className="py-2"
+                  className="py-2 cursor-pointer"
                 >
                   Author: {item.Story.user.display_name}
                 </p>

@@ -91,7 +91,7 @@ const StoryDetail = () => {
         </p>
         <p
           onClick={() => handleUserSelect(selectedStory.Story.user.id)}
-          className="mb-2 story-preview"
+          className="mb-2 story-preview cursor-pointer"
         >
           Author: {selectedStory && selectedStory.Story.user.display_name}
         </p>
