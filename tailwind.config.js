@@ -14,6 +14,7 @@ module.exports = {
       p4: "min(3vw, 1.5rem)",
       p5: "min(3vw, 1.3rem)",
       buttonMain: "min(2.5vw, 1.2rem)",
+      spxs: "min(2vw, .7rem)",
     },
     extend: {
       backgroundImage: {

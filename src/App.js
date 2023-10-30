@@ -11,6 +11,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import SignUp from "./components/SignUp";
 import Update from "./routes/Update";
 import Profile from "./routes/Profile";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
           <Route exact path="/stories/:id/update" element={<Update />} />
           <Route exact path="/users/:id" element={<Profile />} />
         </Routes>
+        <Footer />
       </div>
     </StoriesContextProvider>
   );
