@@ -19,7 +19,7 @@ const Footer = () => {
             <span>
               <a
                 className="cursor-pointer"
-                href="https://www.freepik.com/free-ai-image/view-imposing-castle-with-natural-landscape_40572801.htm#page=3&query=background%20story%20rpg%20game&position=0&from_view=search&track=ais"
+                href="https://www.freepik.com/free-ai-image/view-imposing-castle-with-natural-landscape_40572802.htm#fromView=search&term=horizontal+wallpaper+castle+ttrpg&page=1&position=11&track=ais_ai_generated&regularType=ai"
               >
                 Castle Image By freepik,
               </a>
