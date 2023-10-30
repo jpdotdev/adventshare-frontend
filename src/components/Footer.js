@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-dkgray text-spxs w-full py-2 fixed bottom-0 left-0 right-0">
+    <footer className="bg-dkgray text-spxs w-full py-2 bottom-0 left-0 right-0">
       <div className="flex flex-row w-5/6 mx-auto items-center">
         <div className="text-center w-1/2 mx-auto">
           <span>Image Credits:</span>
