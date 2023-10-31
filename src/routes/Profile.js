@@ -59,7 +59,7 @@ const Profile = () => {
       const response = await Adventshare.delete(`/users/${id}`, {
         headers: {
           authorization: `bearer ${jwt}`,
-        }, 
+        },
       });
     } catch (err) {
       console.log(err);
@@ -86,9 +86,8 @@ const Profile = () => {
     navigate(`/stories/${id}/update`);
   };
 
-
   return (
-    <div>
+    <div className="pb-20">
       <div className="bg-challenger bg-cover bg-no-repeat pt-52 pb-16 h-3/5 flex flex-col items-center px-auto mb-16">
         <h1 className="text-h1 font-CinzelDeco font-bold text-dkpurple bg-trgray mt-28 mb-52 mx-auto max-w-xl min-w-2/5 p-6 rounded-xl">
           Profile
@@ -97,12 +96,16 @@ const Profile = () => {
           <p className="text-p4">{`@${user?.display_name}`}</p>
           {signedIn && (
             <button
-              onClick={() => { if (
-                        window.confirm(
-                          "Are you sure you want to delete your account?"
-                        )
-                      ) handleUserDelete(id); handleLogout(); }}
-              className="bg-asred p-2"
+              onClick={() => {
+                if (
+                  window.confirm(
+                    "Are you sure you want to delete your account?"
+                  )
+                )
+                  handleUserDelete(id);
+                handleLogout();
+              }}
+              className="bg-asred p-2 text-buttonMain"
             >
               <span> Delete Account </span>
             </button>
@@ -115,7 +118,7 @@ const Profile = () => {
           return (
             <div
               key={item.id}
-              className="bg-beige max-w-lg min-w-[60%] mx-auto my-6 px-3 py-6 text-[#000000] flex flex-col justify-between shadow-inner shadow-dkpurple"
+              className="bg-beige max-w-md min-w-[60%] mx-auto my-6 p-6 text-[#000000] flex flex-col justify-between shadow-inner shadow-dkpurple"
             >
               <p
                 onClick={() => handleStorySelect(item.Story.id)}
@@ -123,12 +126,12 @@ const Profile = () => {
               >
                 Character: {item.Story.character}
               </p>
-              <p className="text-p2 mb-3">Party: {item.Story.party}</p>
-              <p className="story mb-3">{`${item.Story.story.substring(
+              <p className="text-p1 mb-3">Party: {item.Story.party}</p>
+              <p className="story text-p1 mb-3">{`${item.Story.story.substring(
                 0,
                 250
               )}...`}</p>
-              <p className="mb-3">Likes: {item.likes}</p>
+              <p className="mb-3 text-p1">Likes: {item.likes}</p>
               <div className="mt-2">
                 {signedIn && (
                   <button
@@ -140,7 +143,7 @@ const Profile = () => {
                       )
                         handleStoryDelete(item.Story.id);
                     }}
-                    className="bg-asred p-2 text-[#fff] mr-4"
+                    className="bg-asred p-2 text-buttonMain text-[#fff] mr-4"
                   >
                     {" "}
                     Delete Story{" "}
@@ -149,7 +152,7 @@ const Profile = () => {
                 {signedIn && (
                   <button
                     onClick={() => handleUpdate(item.Story.id)}
-                    className="bg-[#000] p-2 text-[#fff]"
+                    className="bg-[#000] p-2 text-[#fff] text-buttonMain"
                   >
                     {" "}
                     Update Story{" "}

@@ -39,7 +39,7 @@ const AddStory = () => {
   };
 
   return (
-    <div className="mt-32">
+    <div className="mt-32 h-[80vh]">
       <h1 className="text-h2 mb-10 text-center font-CinzelDeco font-bold mx-auto max-w-xl min-w-2/5">
         Create a Story
       </h1>

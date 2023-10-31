@@ -31,7 +31,7 @@ const StoriesList = (props) => {
   };
 
   return (
-    <div className="all-stories h-full">
+    <div className="all-stories h-full pb-20">
       <div className="bg-adventurers bg-cover bg-no-repeat py-52 h-3/5 text-center px-6">
         <h1 className="text-h1 font-CinzelDeco font-bold text-[#000000] bg-trgray my-28 mx-auto min-w-[50%] max-w-md p-6 rounded-xl">
           All Stories
@@ -42,7 +42,7 @@ const StoriesList = (props) => {
           return (
             <div
               key={item.id}
-              className="bg-beige max-w-lg min-w-[60%] mx-auto my-6 px-3 py-6 text-[#000000] flex flex-row justify-between items-center shadow-inner shadow-dkpurple"
+              className="bg-beige md:w-3/5 w-4/5 mx-auto my-6 px-3 text-[#000000] flex flex-row justify-between items-center shadow-inner shadow-dkpurple"
             >
               <div
                 className="w-2/5 mx-auto text-center cursor-pointer"
@@ -53,7 +53,11 @@ const StoriesList = (props) => {
                   250
                 )}...`}</p>
               </div>
-              <img src={divider} alt="" className="py-10" />
+              <img
+                src={divider}
+                alt=""
+                className="py-10 h-[200px] md:h-[400px]"
+              />
               <div className="text-p3 w-2/5 mx-auto px-4 justify-center">
                 <p className="py-2">Character: {item.Story.character}</p>
                 <p className="py-2">Party: {item.Story.party}</p>

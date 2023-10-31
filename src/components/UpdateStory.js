@@ -48,7 +48,7 @@ const UpdateStory = (props) => {
   };
 
   return (
-    <div className="mt-32">
+    <div className="mt-32 h-[80vh]">
       <h1 className="header-create-story mb-10 text-center font-CinzelDeco font-bold mx-auto max-w-xl min-w-2/5">
         {" "}
         Update Story{" "}
