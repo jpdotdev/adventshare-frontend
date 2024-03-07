@@ -98,7 +98,7 @@ const StoryDetail = () => {
           Author: {selectedStory && selectedStory.Story.user.display_name}
         </p>
         <p className="mb-2 story-preview">
-          Likes: {selectedStory && selectedStory.likes}
+          Likes: {likes} 
         </p>
         <button
           onClick={() => likeStory(selectedStory.Story.id)}
