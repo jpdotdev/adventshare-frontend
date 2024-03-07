@@ -36,7 +36,9 @@ const Profile = () => {
     const fetchUserStories = async () => {
       try {
         const response = await Adventshare.get("/stories");
-        setUserStories(response.data);
+        const userStories = response.data.filter((s) => s.Story.user.id == id);
+        userStories.sort((a, b) => new Date(b.Story.created_at) - new Date(a.Story.created_at));
+        setUserStories(userStories);
       } catch (err) {
         console.log(err);
       }
