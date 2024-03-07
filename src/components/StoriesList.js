@@ -13,7 +13,8 @@ const StoriesList = (props) => {
     const fetchStories = async () => {
       try {
         const response = await Adventshare.get("/stories");
-        setStories(response.data);
+        const sortedStories = response.data.sort((a, b) => new Date(b.Story.created_at) - new Date(a.Story.created_at)); // this is new
+        setStories(sortedStories); // this is new
       } catch (err) {
         console.log(err);
       }
