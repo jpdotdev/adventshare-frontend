@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import divider from "../assets/divider.svg";
 
-const StoriesList = (props) => {
+const StoriesList = () => {
   const { stories, setStories } = useContext(StoriesContext);
   let navigate = useNavigate();
 
@@ -13,8 +13,8 @@ const StoriesList = (props) => {
     const fetchStories = async () => {
       try {
         const response = await Adventshare.get("/stories");
-        const sortedStories = response.data.sort((a, b) => new Date(b.Story.created_at) - new Date(a.Story.created_at)); // this is new
-        setStories(sortedStories); // this is new
+        const sortedStories = response.data.sort((a, b) => new Date(b.Story.created_at) - new Date(a.Story.created_at));
+        setStories(sortedStories);
       } catch (err) {
         console.log(err);
       }
