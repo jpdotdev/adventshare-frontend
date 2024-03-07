@@ -11,12 +11,14 @@ const StoryDetail = () => {
   const { id } = useParams();
   const { selectedStory, setSelectedStory } = useContext(StoriesContext);
   const [jwt, setJwt] = useLocalState("", "jwt");
+  const [likes, setLikes] = useState(selectedStory ? selectedStory.likes : 0); // this is new
 
   useEffect(() => {
     const fetchStory = async () => {
       try {
         const response = await Adventshare.get(`/stories/${id}`);
         setSelectedStory(response.data);
+        setLikes(response.data.likes); // this is new
       } catch (err) {
         console.log(err);
       }
@@ -43,7 +45,7 @@ const StoryDetail = () => {
           },
         }
       );
-      console.log(response);
+      setLikes((prevLikes) => prevLikes + 1); // this is new
     } catch (err) {
       console.log(err);
       if (err.response.status == 401) {
@@ -67,7 +69,7 @@ const StoryDetail = () => {
           },
         }
       );
-      console.log(response);
+      setLikes((prevLikes) => prevLikes - 1); // this is new
     } catch (err) {
       console.log(err);
       if (err.response.status == 401) {
